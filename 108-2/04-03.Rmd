@@ -1,0 +1,39 @@
+---
+title: "04-03"
+author: "林茂廷"
+date: "4/3/2020"
+output: html_document
+---
+
+## 反頓點與雙(單)引號
+
+```{r}
+library(lubridate)
+'氣象預報'<-list(
+  '日期'<-list(
+    ymd('2020-03-31','2020-04-01')),
+'台北市'=list(
+  '氣溫最高',25,
+  '氣溫最低',18),
+`新北市`=list(
+  '氣溫最高',24,
+  '氣溫最低',15)
+)
+
+
+print('氣象預報')
+```
+
+## 警告訊息
+
+```{r}
+library(lubridate)
+```
+
+
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+
