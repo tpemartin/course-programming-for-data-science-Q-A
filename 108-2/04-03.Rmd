@@ -5,35 +5,51 @@ date: "4/3/2020"
 output: html_document
 ---
 
-## 反頓點與雙(單)引號
+## 線上Q&A影片
 
-```{r}
-library(lubridate)
-'氣象預報'<-list(
-  '日期'<-list(
-    ymd('2020-03-31','2020-04-01')),
-'台北市'=list(
-  '氣溫最高',25,
-  '氣溫最低',18),
-`新北市`=list(
-  '氣溫最高',24,
-  '氣溫最低',15)
-)
+  * GitHub 網址： https://github.com/tpemartin/course-programming-for-data-science-Q-A
+  
+  * Vimeo 網址： https://vimeo.com/showcase/6955130
 
-
-print('氣象預報')
-```
 
 ## 警告訊息
 
 ```{r}
 library(lubridate)
+date("2020-03-05")
+base::date()
 ```
 
-
+  * stackoverflow: "The message means that both the packages have functions with the same names." 
+  
 Attaching package: ‘lubridate’
 
 The following object is masked from ‘package:base’:
 
     date
 
+
+## 反頓點與雙(單)引號
+
+  1 使用 <- 或 = 創立物件時，左邊物件名稱要用反頓點`
+  
+  2 list裡元素命名時， = 的「左邊」要用反頓點`
+
+  3 呼叫某個物件存的值，要用反頓點`
+
+```{r}
+library(lubridate)
+`氣象預報`<-list( # 違反原則 1
+  `日期`=list( # 違反 2, 而且list裡原素命名是用=，而非<-
+    ymd('2020-03-31','2020-04-01')),
+  `台北市`=list( # 違反
+    '氣溫最高',25,
+    '氣溫最低',18),
+  `新北市`=list(
+    '氣溫最高',24,
+    '氣溫最低',15)
+)
+
+
+print(`氣象預報`) # 違反 3
+```
