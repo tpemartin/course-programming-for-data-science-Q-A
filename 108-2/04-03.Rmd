@@ -7,7 +7,7 @@ output: html_document
 
 ## 線上Q&A影片
 
-  * GitHub 網址： https://github.com/tpemartin/course-programming-for-data-science-Q-A
+  * Dropbox: https://www.dropbox.com/sh/mkiax3ku7n1vf9d/AABCb8r-pqUNmb2BtaNS7_CHa?dl=0
   
   * Vimeo 網址： https://vimeo.com/showcase/6955130
 
@@ -16,11 +16,10 @@ output: html_document
 
 ```{r}
 library(lubridate)
-date("2020-03-05")
-base::date()
+date("2020-03-05") 
+base::date(....) # 指定使用base裡的date函數
 ```
 
-  * stackoverflow: "The message means that both the packages have functions with the same names." 
   
 Attaching package: ‘lubridate’
 
@@ -28,8 +27,11 @@ The following object is masked from ‘package:base’:
 
     date
 
+  * stackoverflow: "The message means that both the packages have functions with the same names." 
 
 ## 反頓點與雙(單)引號
+
+以下只針對特殊命名方式：
 
   1 使用 <- 或 = 創立物件時，左邊物件名稱要用反頓點`
   
@@ -39,15 +41,15 @@ The following object is masked from ‘package:base’:
 
 ```{r}
 library(lubridate)
-`氣象預報`<-list( # 違反原則 1
-  `日期`=list( # 違反 2, 而且list裡原素命名是用=，而非<-
-    ymd('2020-03-31','2020-04-01')),
-  `台北市`=list( # 違反
+`氣象預報` <-list( # 違反 1
+  `日期`=list( # 違反 2, 且list 裡元素命名要用=而非<-
+    ymd('2020-03-31','2020-04-01')), # element 1 ends here
+  `台北市`=list( # 違反 2
     '氣溫最高',25,
-    '氣溫最低',18),
+    '氣溫最低',18), # element 2 ends here
   `新北市`=list(
     '氣溫最高',24,
-    '氣溫最低',15)
+    '氣溫最低',15) # element 3 ends here
 )
 
 
